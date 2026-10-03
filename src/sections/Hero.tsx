@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, ArrowDown, FileDown } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { ArrowDown, FileDown } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa6";
+import { SiGithub, SiWhatsapp } from "react-icons/si";
 import { hero } from "@/data/content";
 import { SpecialText } from "@/components/ui/special-text";
 
 const iconMap: Record<string, React.ReactNode> = {
-  github: <Github size={18} />,
-  linkedin: <Linkedin size={18} />,
+  github: <SiGithub size={18} />,
+  linkedin: <FaLinkedin size={18} />,
   whatsapp: <SiWhatsapp size={18} />,
   cv: <FileDown size={18} />,
 };

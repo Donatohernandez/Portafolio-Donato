@@ -1,6 +1,8 @@
 "use client";
 
-import { ArrowUpRight, FileDown, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { ArrowUpRight, FileDown, Mail } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa6";
+import { SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
 import { contact } from "@/data/content";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -100,7 +102,7 @@ export function Contact() {
                   className="flex items-center gap-4 p-4 rounded-lg border border-border bg-surface-2 group hover:border-accent/30 transition-colors duration-200 cursor-pointer"
                 >
                   <div className="p-2.5 rounded-md bg-accent-dim">
-                    <Linkedin size={16} className="text-accent" />
+                    <FaLinkedin size={16} className="text-accent" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-mono text-[11px] text-text-muted uppercase tracking-widest mb-0.5">
@@ -119,7 +121,7 @@ export function Contact() {
                   className="flex items-center gap-4 p-4 rounded-lg border border-border bg-surface-2 group hover:border-accent/30 transition-colors duration-200 cursor-pointer"
                 >
                   <div className="p-2.5 rounded-md bg-accent-dim">
-                    <MessageCircle size={16} className="text-accent" />
+                    <SiWhatsapp size={16} className="text-accent" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-mono text-[11px] text-text-muted uppercase tracking-widest mb-0.5">
