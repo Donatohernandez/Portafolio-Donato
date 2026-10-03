@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowDownRight, ArrowUp, CheckCircle2, ExternalLink, Mic, Sparkles, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SiGithub } from "react-icons/si";
 import { projects } from "@/data/content";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -237,6 +238,17 @@ export function Work() {
                       <a href="#project-index" className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm text-text-secondary transition-colors hover:border-accent/30 hover:text-accent">
                         <ArrowUp size={15} /> Índice
                       </a>
+                      {"github" in project && project.github !== "#" && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Ver repositorio de ${project.name}`}
+                          className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm text-text-secondary transition-colors hover:border-accent/30 hover:text-accent"
+                        >
+                          <SiGithub size={15} /> Ver repositorio
+                        </a>
+                      )}
                       {project.comingSoon ? (
                         <span aria-disabled="true" className="flex cursor-not-allowed select-none items-center gap-2 rounded-md border border-accent/20 bg-accent/10 px-4 py-2 text-sm text-accent opacity-40">
                           <ExternalLink size={15} /> Próximamente
