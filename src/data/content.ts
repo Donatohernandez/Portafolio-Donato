@@ -86,7 +86,7 @@ export const projects = [
     live: "#",
     liveLabel: "Caso de estudio próximamente",
     comingSoon: true,
-    media: [] as { src: string; alt: string }[],
+    media: [] as { src: string; alt: string; caption: string; width: number; height: number }[],
   },
   {
     id: "pitchpilot",
@@ -123,7 +123,29 @@ export const projects = [
     live: "#",
     liveLabel: "Conocer PitchPilot",
     comingSoon: true,
-    media: [] as { src: string; alt: string }[],
+    media: [
+      {
+        src: "/projects/pitchpilot/simulacion-enfocado.webp",
+        alt: "Sesión de práctica de PitchPilot con contacto visual detectado",
+        caption: "La sesión evalúa el pitch en tiempo real mientras el usuario mantiene el contacto visual.",
+        width: 1600,
+        height: 841,
+      },
+      {
+        src: "/projects/pitchpilot/simulacion-distraccion.webp",
+        alt: "PitchPilot detectando una distracción durante una simulación",
+        caption: "El sistema identifica distracciones durante la práctica y las incorpora a la retroalimentación.",
+        width: 1600,
+        height: 841,
+      },
+      {
+        src: "/projects/pitchpilot/reporte-completo.webp",
+        alt: "Reporte de desempeño generado después de una sesión de PitchPilot",
+        caption: "Cada sesión termina con métricas, hallazgos y acciones concretas para mejorar el siguiente pitch.",
+        width: 973,
+        height: 1600,
+      },
+    ],
   },
   {
     id: "zaaby",
@@ -163,14 +185,23 @@ export const projects = [
       {
         src: "/projects/zaaby/biblioteca.webp",
         alt: "Biblioteca de contenido guardado en Zaaby con filtros, estados y acciones sugeridas",
+        caption: "Biblioteca organizada con filtros, estados y acceso directo a las acciones sugeridas.",
+        width: 1290,
+        height: 2796,
       },
       {
         src: "/projects/zaaby/detalle-acciones.webp",
         alt: "Detalle de un contenido en Zaaby con resumen, etiquetas y acciones generadas por IA",
+        caption: "Resumen, etiquetas y próximos pasos generados por IA a partir del contenido guardado.",
+        width: 1290,
+        height: 2796,
       },
       {
         src: "/projects/zaaby/metricas.webp",
         alt: "Panel de métricas de Zaaby con progreso, acciones completadas y categorías",
+        caption: "Panel de avance con contenido útil, tareas completadas y progreso por categoría.",
+        width: 1290,
+        height: 2796,
       },
     ],
   },

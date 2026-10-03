@@ -36,7 +36,13 @@ const statusStyles: Record<string, string> = {
 };
 
 export function Work() {
-  const [selectedMedia, setSelectedMedia] = useState<{ src: string; alt: string } | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<{
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  } | null>(null);
 
   useEffect(() => {
     if (!selectedMedia) return;
@@ -132,19 +138,37 @@ export function Work() {
                 {project.media.length > 0 && (
                   <section className="border-b border-border bg-background/60 p-6 sm:p-7">
                     <p className="font-mono text-xs uppercase tracking-widest text-accent/70">Producto en funcionamiento</p>
-                    <h4 className="mb-5 mt-2 text-xl font-semibold text-text-primary">De contenido guardado a acciones concretas</h4>
-                    <div className="flex snap-x gap-4 overflow-x-auto pb-3 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+                    <h4 className="mb-5 mt-2 text-xl font-semibold text-text-primary">
+                      {project.id === "pitchpilot"
+                        ? "Práctica en tiempo real y retroalimentación accionable"
+                        : "De contenido guardado a acciones concretas"}
+                    </h4>
+                    <div className="flex flex-wrap items-start justify-center gap-5">
                       {project.media.map((media) => (
-                        <button
-                          type="button"
+                        <figure
                           key={media.src}
-                          onClick={() => setSelectedMedia(media)}
-                          aria-label={`Ampliar captura: ${media.alt}`}
-                          aria-haspopup="dialog"
-                          className="relative mx-auto h-[460px] w-[212px] min-w-[212px] snap-center overflow-hidden rounded-xl border border-border transition duration-200 hover:scale-[1.02] hover:border-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          className={`w-full ${media.width > media.height ? "max-w-[360px]" : "max-w-[220px]"}`}
                         >
-                          <Image src={media.src} alt={media.alt} fill sizes="212px" className="object-cover" />
-                        </button>
+                          <button
+                            type="button"
+                            onClick={() => setSelectedMedia(media)}
+                            aria-label={`Ampliar captura: ${media.alt}`}
+                            aria-haspopup="dialog"
+                            className="block w-full overflow-hidden rounded-xl border border-border transition duration-200 hover:scale-[1.02] hover:border-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          >
+                            <Image
+                              src={media.src}
+                              alt={media.alt}
+                              width={media.width}
+                              height={media.height}
+                              sizes={media.width > media.height ? "360px" : "220px"}
+                              className="h-auto w-full"
+                            />
+                          </button>
+                          <figcaption className="mt-2 text-center text-xs leading-relaxed text-text-muted">
+                            {media.caption}
+                          </figcaption>
+                        </figure>
                       ))}
                     </div>
                   </section>
@@ -257,21 +281,25 @@ export function Work() {
               autoFocus
               onClick={() => setSelectedMedia(null)}
               aria-label="Cerrar imagen ampliada"
-              className="group relative h-[74vh] max-h-[720px] aspect-[1290/2796] overflow-hidden rounded-2xl border border-white/15 shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="group relative overflow-hidden rounded-2xl border border-white/15 shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <Image
                 src={selectedMedia.src}
                 alt={selectedMedia.alt}
-                fill
-                sizes="(max-height: 800px) 35vw, 332px"
-                className="object-cover"
+                width={selectedMedia.width}
+                height={selectedMedia.height}
+                sizes="90vw"
+                className="h-auto max-h-[74vh] w-auto max-w-[90vw] object-contain"
                 priority
               />
               <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/65 text-white transition-colors group-hover:bg-black/85">
                 <X size={18} />
               </span>
             </button>
-            <p className="font-mono text-[11px] text-white/60">
+            <p className="max-w-xl text-center text-sm text-white/75">
+              {selectedMedia.caption}
+            </p>
+            <p className="font-mono text-[10px] text-white/45">
               Pulsa la imagen, el fondo o Escape para cerrar
             </p>
           </motion.div>
