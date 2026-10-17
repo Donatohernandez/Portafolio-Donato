@@ -249,11 +249,7 @@ export function Work() {
                           <SiGithub size={15} /> Ver repositorio
                         </a>
                       )}
-                      {project.comingSoon ? (
-                        <span aria-disabled="true" className="flex cursor-not-allowed select-none items-center gap-2 rounded-md border border-accent/20 bg-accent/10 px-4 py-2 text-sm text-accent opacity-40">
-                          <ExternalLink size={15} /> Próximamente
-                        </span>
-                      ) : (
+                      {!project.comingSoon && project.live !== "#" && (
                         <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${project.name}`} className="flex items-center gap-2 rounded-md border border-accent/20 bg-accent/10 px-4 py-2 text-sm text-accent transition-colors hover:bg-accent/15">
                           <ExternalLink size={15} /> {project.liveLabel ?? "Ver proyecto"}
                         </a>

@@ -83,6 +83,7 @@ export const projects = [
     ],
     proof:
       "Puedo analizar un proceso real de negocio, estructurar sus datos y reglas, y convertirlo en una automatización práctica que el equipo utiliza desde el celular.",
+    github: "https://github.com/Donatohernandez/materiales-san-rafael",
     live: "#",
     liveLabel: "Caso de estudio próximamente",
     comingSoon: true,
