@@ -68,7 +68,7 @@ export function Work() {
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-12">
-            <SectionLabel>02 · Proyectos destacados</SectionLabel>
+            <SectionLabel>03 · Proyectos destacados</SectionLabel>
             <h2 className="mt-3 text-3xl font-semibold text-text-primary sm:text-4xl">Casos de estudio</h2>
             <p className="mt-4 max-w-2xl leading-relaxed text-text-secondary">
               Tres proyectos que muestran cómo analizo un problema, tomo decisiones técnicas y convierto una necesidad real en un sistema funcional.

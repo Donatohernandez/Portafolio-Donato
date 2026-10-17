@@ -21,7 +21,7 @@ export function Values() {
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <div className="mb-14">
-            <SectionLabel>03 · Enfoque</SectionLabel>
+            <SectionLabel>04 · Enfoque</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-semibold text-text-primary mt-3">
               Cómo trabajo
             </h2>

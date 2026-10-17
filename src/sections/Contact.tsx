@@ -13,7 +13,7 @@ export function Contact() {
     <section id="contact" className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
-          <SectionLabel>05 · Contacto</SectionLabel>
+          <SectionLabel>06 · Contacto</SectionLabel>
         </FadeIn>
 
         <FadeIn delay={0.06}>
