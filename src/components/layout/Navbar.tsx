@@ -100,7 +100,7 @@ export function Navbar() {
           </span>
 
           {/* Desktop links */}
-          <ul className="hidden sm:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-5">
             {nav.links.map((link) => {
               const id = link.href.slice(1);
               const isActive = activeSection === id;
@@ -121,17 +121,28 @@ export function Navbar() {
             })}
           </ul>
 
+          <div className="flex items-center gap-2">
+            <a
+              href="https://donatohernandez.dev"
+              hrefLang="en"
+              lang="en"
+              aria-label="Cambiar a inglés"
+              className="inline-flex items-center justify-center rounded-md border border-border px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:border-accent/40 hover:text-accent"
+            >
+              English
+            </a>
           {/* Mobile hamburger */}
           <button
             ref={menuButtonRef}
             onClick={() => setMenuOpen((v) => !v)}
-            className="sm:hidden flex items-center justify-center w-9 h-9 rounded-md text-text-secondary hover:text-text-primary transition-colors duration-200"
+            className="lg:hidden flex items-center justify-center w-9 h-9 rounded-md text-text-secondary hover:text-text-primary transition-colors duration-200"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
+          </div>
         </nav>
       </motion.header>
 
@@ -151,7 +162,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm sm:hidden"
+              className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMenuOpen(false)}
             />
 
@@ -162,7 +173,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-64 bg-surface border-l border-border flex flex-col sm:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-64 bg-surface border-l border-border flex flex-col lg:hidden"
             >
               {/* Drawer header */}
               <div className="h-16 flex items-center justify-between px-6 border-b border-border">
